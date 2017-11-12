@@ -1,0 +1,15 @@
+<Project ToolsVersion="15.0" DefaultTargets="UpdateFiles">
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="2.0.0" />
+  </ItemGroup>
+
+  <Target Name="UpdateFiles">
+    <ItemGroup>
+      <FilesToCopy Include="..\TextFiles\*.*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(FilesToCopy)" DestinationFolder="..\TextFilesCopy" />
+  </Target>
+
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets"/>
+</Project>
