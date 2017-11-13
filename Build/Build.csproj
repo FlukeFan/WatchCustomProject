@@ -1,7 +1,12 @@
-<Project ToolsVersion="15.0" DefaultTargets="UpdateFiles">
+<Project Sdk="Microsoft.NET.Sdk" DefaultTargets="UpdateFiles">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="2.0.0" />
+    <Watch Include="..\TextFiles\*.txt" />
   </ItemGroup>
 
   <Target Name="UpdateFiles">
@@ -11,5 +16,4 @@
     <Copy SourceFiles="@(FilesToCopy)" DestinationFolder="..\TextFilesCopy" />
   </Target>
 
-  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets"/>
 </Project>
